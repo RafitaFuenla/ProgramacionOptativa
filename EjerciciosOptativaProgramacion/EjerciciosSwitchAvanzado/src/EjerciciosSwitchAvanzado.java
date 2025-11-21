@@ -78,4 +78,48 @@ public class EjerciciosSwitchAvanzado {
 
         sc.close();
     }
+
+    public enum CategoriaPlato{
+        ENTRADA,
+        PRINCIPAL,
+        POSTRE,
+        BEBIDA
+    }
+    public void ejercicio04(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Elige una opcion.");
+        System.out.println("ENTRADA, PRINCIPAL, POSTRE, BEBIDA");
+        String entrada = sc.next().toUpperCase();
+
+        CategoriaPlato plato = CategoriaPlato.valueOf(entrada);
+
+        switch (plato){
+            case ENTRADA -> {
+                System.out.println("=== ENTRADAS ===");
+                System.out.println("Papas fritas");
+                System.out.println("Ensaladas");
+                System.out.println("Aceitunas");
+            }
+            case PRINCIPAL -> {
+                System.out.println("=== PLATOS PRINCIPALES ===");
+                System.out.println("Sopa");
+                System.out.println("Espaguetis");
+                System.out.println("Carne");
+            }
+            case BEBIDA -> {
+                System.out.println("=== BEBIDAS ===");
+                System.out.println("Agua");
+                System.out.println("Cocacola");
+                System.out.println("Vino");
+            }
+            case POSTRE -> {
+                System.out.println("=== POSTRES ===");
+                System.out.println("Helado");
+                System.out.println("Tarta");
+                System.out.println("Fruta");
+            }
+        }
+
+    }
 }
