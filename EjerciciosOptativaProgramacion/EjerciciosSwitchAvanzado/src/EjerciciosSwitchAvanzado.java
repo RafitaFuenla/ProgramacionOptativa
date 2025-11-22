@@ -175,4 +175,112 @@ public class EjerciciosSwitchAvanzado {
         }
     }
 
+    public void ejercicio07() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("¿Qué puntuación obtuviste?");
+        int puntuacion = sc.nextInt();
+
+        System.out.printf("Obtuviste una puntuación de %d, por lo tanto...\n", puntuacion);
+
+        int bloque =
+                (puntuacion >= 0 && puntuacion <= 100) ? 1 :
+                        (puntuacion <= 500) ? 2 :
+                                (puntuacion <= 1000) ? 3 :
+                                        (puntuacion <= 5000) ? 4 :
+                                                (puntuacion > 5000) ? 5 : 0;
+
+        switch (bloque) {
+            case 1 -> {
+                System.out.println("Nivel: Principiante.");
+                System.out.println("💪 Sigue esforzándote.");
+                System.out.println("🎁 Recompensa: 10 Monedas de bronce");
+            }
+            case 2 -> {
+                System.out.println("Nivel: Intermedio.");
+                System.out.println("🔥 Vas por buen camino.");
+                System.out.println("🎁 Recompensa: 50 Monedas de plata");
+            }
+            case 3 -> {
+                System.out.println("Nivel: Avanzado.");
+                System.out.println("⚡ Ya eres una máquina.");
+                System.out.println("🎁 Recompensa: 100 Monedas de oro");
+            }
+            case 4 -> {
+                System.out.println("Nivel: Experto.");
+                System.out.println("🏆 Impresionante rendimiento.");
+                System.out.println("🎁 Recompensa: Cofre legendario");
+            }
+            case 5 -> {
+                System.out.println("Nivel: Maestro.");
+                System.out.println("👑 Estás en la cima.");
+                System.out.println("🎁 Recompensa: Gema mística");
+            }
+            default -> System.out.println("Puntuación no válida, introduce un número superior a 0.");
+        }
+
+        sc.close();
+    }
+
+    public void ejercicio08() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("¿Que extension tiene tu archivo?");
+        System.out.println("Extension disponibles: jpg, png, gig, pdf, doc, txt, mp3, wav, mp4 y avi.");
+        String extension = sc.next().toLowerCase();
+
+        switch (extension) {
+            case "jpg", "png", "gif" ->
+                    System.out.println("Tipo: Imagen 🖼️ | Programa recomendado: Visor de fotos / Photoshop / Paint");
+            case "pdf" -> System.out.println("Tipo: Documento PDF 📄 | Programa recomendado: Adobe Reader");
+            case "doc", "docx" -> System.out.println("Tipo: Documento Word 📝 | Programa recomendado: Microsoft Word");
+            case "txt" -> System.out.println("Tipo: Texto plano 📃 | Programa recomendado: Bloc de notas / VS Code");
+            case "mp3", "wav" -> System.out.println("Tipo: Audio 🎵 | Programa recomendado: VLC / Windows Media Player");
+            case "mp4", "avi" -> System.out.println("Tipo: Vídeo 🎬 | Programa recomendado: VLC / KMPlayer");
+            default -> System.out.println("Tipo: Desconocido ❓ | Programa recomendado: Ninguno disponible.");
+        }
+        sc.close();
+    }
+
+    public void ejercicio09() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("¿Cuanto pesas (en kg)?");
+        double peso = sc.nextDouble();
+        System.out.println("¿Cuanto mides (en metros)?");
+        double altura = sc.nextDouble();
+
+        double imc = peso / (altura * altura);
+        System.out.printf("Tienes un IMC de %.2f\n", imc);
+
+        int rango =
+                (imc < 18.5) ? 1 :
+                        (imc <= 24.9) ? 2 :  // Ya sabemos que es >= 18.5
+                                (imc <= 29.9) ? 3 :  // Ya sabemos que es > 24.9
+                                        4;
+
+        switch (rango) {
+            case 1 -> System.out.println("⚠️ Peso Bajo - Considera consultar un nutricionista");
+            case 2 -> System.out.println("✅ Peso Normal - ¡Muy bien!");
+            case 3 -> System.out.println("⚠️ Sobrepeso - Considera hacer más ejercicio");
+            case 4 -> System.out.println("❗ Obesidad - Se recomienda consultar un médico");
+            default -> System.out.println("Error en el cálculo");
+        }
+
+        sc.close();
+    }
+
+    public enum EstadoPedido {
+        PENDIENTE,
+        PROCESANDO,
+        ENVIADO,
+        EN_TRANSITO,
+        ENTREGADO,
+        CANCELADO;
+    }
+
+    public void ejercicio10(){
+
+        
+    }
 }
